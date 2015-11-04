@@ -32,10 +32,10 @@ public class TurkeyChallenge {
         
         
          List<Turkey> list = new ArrayList<>(set);
-        // normal sort by ssn
+        
         System.out.println("Normal sort by id");
         System.out.println(" ");
-        Collections.sort(list);
+        Collections.sort(list,new SortByName());
         
         
         for(Turkey t : list){
