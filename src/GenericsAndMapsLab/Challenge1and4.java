@@ -16,14 +16,14 @@ import java.util.TreeSet;
  *
  * @author John
  */
-public class Challenge1 {
+public class Challenge1and4 {
     
     
     public static void main(String[] args) {
-        Employee person1 = new Employee("Selas", "John","103-45-5345");
-        Employee person2 = new Employee("Smith", "Bob","858-56-8885");
-        Employee person3 = new Employee("Allen", "Joe","756-75-3564");
-        Employee person4 = new Employee("Flanders", "Ned","756-75-3564");
+        Employee person1 = new Employee("Selas", "John","103-45-5345",2);
+        Employee person2 = new Employee("Smith", "Bob","858-56-8885",7);
+        Employee person3 = new Employee("Allen", "Joe","756-75-3564",9);
+        Employee person4 = new Employee("Flanders", "Ned","756-75-3564",3);
         
         Set<Employee> set = new TreeSet<Employee>();
         set.add(person1);

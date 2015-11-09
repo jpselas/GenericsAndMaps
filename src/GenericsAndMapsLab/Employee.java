@@ -15,28 +15,13 @@ public class Employee implements Comparable{
     private String lastName;
     private String firstName;
     private String ssn;
+    private int empId;
 
-    public Employee(String lastName, String firstName, String ssn) {
+    public Employee(String lastName, String firstName, String ssn, int empId) {
         this.lastName = lastName;
         this.firstName = firstName;
         this.ssn = ssn;
-    }
-
-    public String getSsn() {
-        return ssn;
-    }
-
-    public void setSsn(String ssn) {
-        this.ssn = ssn;
-    }
-
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        this.empId = empId;
     }
 
     public String getLastName() {
@@ -47,10 +32,34 @@ public class Employee implements Comparable{
         this.lastName = lastName;
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getSsn() {
+        return ssn;
+    }
+
+    public void setSsn(String ssn) {
+        this.ssn = ssn;
+    }
+
+    public int getEmpId() {
+        return empId;
+    }
+
+    public void setEmpId(int empId) {
+        this.empId = empId;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 19 * hash + Objects.hashCode(this.ssn);
+        int hash = 5;
+        hash = 67 * hash + Objects.hashCode(this.ssn);
         return hash;
     }
 
@@ -70,18 +79,20 @@ public class Employee implements Comparable{
     }
 
     @Override
-    public String toString() {
-        return firstName + " "+lastName + " has a ssn of " + ssn ;
+    public int compareTo(Object obj) {
+        Employee e = (Employee)obj;
+        
+        return new CompareToBuilder()
+               .append(this.ssn, e.ssn)
+               .toComparison();
     }
 
     @Override
-    public int compareTo(Object obj) {
-        Employee o = (Employee)obj;
-        
-        return new CompareToBuilder()
-               .append(this.ssn, o.ssn)
-               .toComparison();
+    public String toString() {
+        return "Employee{" + "lastName=" + lastName + ", firstName=" + firstName + ", ssn=" + ssn + ", empId=" + empId + '}';
     }
+
+   
 
 
     
